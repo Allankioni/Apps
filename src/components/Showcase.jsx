@@ -47,44 +47,14 @@ const Showcase = () => {
 
   return (
     <main
-      style={{
-        display: "flex",
-        flexDirection: "column",
-        gap: "10px",
-        padding: "10px",
-        position: "relative",
-      }}
+      className="flex flex-col gap-4 p-4 relative"
     >
       {isBidding && (
         <div
-          style={{
-            position: "absolute",
-            top: "0",
-            width: "100%",
-            height: "100%",
-            backgroundColor: "black",
-            opacity: "50%",
-            display: "flex",
-            flexDirection: "column",
-            justifyItems: "center",
-            alignItems: "center",
-            padding: "30px",
-            zIndex: 100,
-          }}
+          className="absolute top-0 w-full h-full bg-black bg-opacity-50 flex flex-col justify-center items-center p-10" 
         >
           <div
-            style={{
-              backgroundColor: "white",
-              border: "none",
-              borderRadius: "3%",
-              display: "flex",
-              flexDirection: "column",
-              gap: "4px",
-              padding: "4px",
-              zIndex: 999,
-              color: "black",
-              position: "relative",
-            }}
+            className="bg-white text-black relative flex flex-col gap-4 p-4 border-none rounded-lg"
           >
             <button
               onClick={() => {
@@ -96,6 +66,7 @@ const Showcase = () => {
                 position: "absolute",
                 padding: "2px",
               }}
+              className="top-"
             >
               x
             </button>
@@ -162,17 +133,9 @@ const Showcase = () => {
       {items?.map((group) => (
         <div
           key={`${group.items.length}-${group.category}`}
-          style={{
-            width: "100%",
-            display: "flex",
-            flexDirection: "column",
-            gap: "4px",
-            overflow: "hidden",
-            paddingX: "3px",
-          }}
+          className="w-full flex flex-col gap-2 overflow-hidden px-2 flex-wrap"
         >
           <span style={{ fontWeight: "bold", fontSize: "30px" }}>
-            {String(group.category).toLocaleUpperCase()}
           </span>
           <div
             style={{
@@ -184,6 +147,7 @@ const Showcase = () => {
               overflowX: "auto",
               paddingLeft: "10px",
             }}
+            className="w-full flex gap-4 overflow-hidden p-5 flex-wrap"
           >
             {group?.items?.map((item) => (
               <div
